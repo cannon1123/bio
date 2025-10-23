@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Logowanie</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <h2>Zaloguj się</h2>
+      <div id="auth-area">
+        <input id="email-input" placeholder="Twój email" type="email">
+        <button id="email-login" class="btn">Wyślij link do logowania</button>
+        <hr>
+        <button id="google-login" class="btn">Zaloguj przez Google</button>
+        <p id="auth-message" class="muted"></p>
+      </div>
+      <div id="user-area" class="hidden">
+        <p>Zalogowany jako <span id="user-email"></span></p>
+        <button id="logout" class="btn outline">Wyloguj</button>
+      </div>
+    </section>
+  </main>
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>

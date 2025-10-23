@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Moje Bio</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/supabase.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1 id="site-name">⎝𝓬𝓪𝓷𝓷𝓸𝓷⎠ — Bio</h1>
+    <nav>
+      <a href="/">Bio</a>
+      <a href="/projekty/">Projekty</a>
+      <a href="/kontakt/">Kontakt</a>
+      <a href="/logowanie/">Logowanie</a>
+      <button id="settings-btn" class="btn small">Ustawienia</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="profile-section" class="card">
+      <div class="profile-top">
+        <img id="avatar" src="/assets/default-avatar.png" alt="avatar" class="avatar">
+        <div>
+          <h2 id="full-name">Twoje Imię</h2>
+          <p id="email-display"></p>
+          <div id="social-links"></div>
+        </div>
+      </div>
+      <div id="bio" class="bio">
+        <h3>O mnie</h3>
+        <p id="bio-text">www.</p>
+      </div>
+    </section>
+
+    <section id="projects-preview" class="card">
+      <h3>Projekty</h3>
+      <div id="projects-list"></div>
+      <a class="btn" href="/projekty/">Zobacz wszystkie projekty</a>
+    </section>
+
+    <section id="comments-section" class="card">
+      <h3>Opinie pod bio</h3>
+      <div id="comments-list"></div>
+
+      <div id="leave-comment" class="comment-form">
+        <h4>Zostaw opinię</h4>
+        <textarea id="comment-content" placeholder="Twoja wiadomość..."></textarea>
+        <label>Ocena:
+          <select id="comment-rating">
+            <option value="5">5</option><option value="4">4</option>
+            <option value="3">3</option><option value="2">2</option><option value="1">1</option>
+          </select>
+        </label>
+        <button id="submit-comment" class="btn">Wyślij</button>
+        <p id="comment-note" class="muted"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Settings modal (basic) -->
+  <div id="settings-modal" class="modal hidden">
+    <div class="modal-content card">
+      <h3>Ustawienia konta</h3>
+      <label>Motyw:
+        <select id="theme-select">
+          <option value='{"mode":"light","primary":"#4f46e5"}'>Jasny</option>
+          <option value='{"mode":"dark","primary":"#10b981"}'>Ciemny</option>
+          <option value='{"mode":"custom","primary":"#ef4444"}'>Custom</option>
+        </select>
+      </label>
+      <label>Kolor podstawowy: <input id="theme-color" type="color" value="#4f46e5"></label>
+      <div class="modal-actions">
+        <button id="save-theme" class="btn">Zapisz</button>
+        <button id="close-settings" class="btn outline">Zamknij</button>
+      </div>
+      <p class="muted">Ustawienia zapisywane są w Twoim profilu Supabase.</p>
+    </div>
+  </div>
+
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>

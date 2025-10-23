@@ -1,0 +1,58 @@
+:root{
+  --bg: #ffffff;
+  --text: #111827;
+  --card: #f8fafc;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+}
+
+[data-theme="dark"]{
+  --bg: #0b1220;
+  --text: #e6eef8;
+  --card: #0f1724;
+  --muted: #9aa6b2;
+  --primary: #10b981;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-bottom:40px;
+}
+
+.site-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 24px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+}
+.site-header nav a, .site-header nav button{ margin-left:12px; text-decoration:none; color:var(--muted) }
+.container{ max-width:980px; margin:28px auto; padding:0 16px; }
+
+.card{ background:var(--card); padding:18px; border-radius:12px; box-shadow: 0 6px 18px rgba(2,6,23,0.06); margin-bottom:18px; }
+.profile-top{ display:flex; gap:14px; align-items:center; }
+.avatar{ width:88px; height:88px; border-radius:12px; object-fit:cover; }
+.btn{ background:var(--primary); color:white; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+.btn.small{ padding:6px 10px; font-size:0.9rem; }
+.btn.outline{ background:transparent; border:1px solid rgba(0,0,0,0.08); color:var(--text); }
+.muted{ color:var(--muted); font-size:0.9rem; }
+#social-links a{ margin-right:8px; text-decoration:none; color:var(--primary); }
+
+#projects-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:12px; }
+.project{ padding:12px; border-radius:8px; background:rgba(255,255,255,0.02) }
+.project h4{ margin:0 0 6px 0; }
+
+.comment-form textarea, #contact-message{ width:100%; height:90px; padding:10px; border-radius:8px; border:1px solid rgba(0,0,0,0.06); resize:vertical; margin-bottom:8px; background:transparent; color:var(--text) }
+
+.modal{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(2,6,23,0.4); }
+.hidden{ display:none !important; }
+.modal-content{ width:90%; max-width:520px; }
+
+.small-muted{ font-size:0.85rem; color:var(--muted); }
